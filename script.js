@@ -79,14 +79,6 @@ class User {
   
       let formData = new FormData(document.querySelector('#form-data'));
   
-      let errors = new ValidateInput(formData).require('chưa được nhập');
-      resetError();
-      if (errors.length > 0) {
-        for (let [key, mess] of errors) {
-          document.querySelector(`.error-${key}`).innerHTML = mess;
-        }
-        return;
-      }
   
       let userCreate = new User(id, nameEl.value, priceEl.value, detailEl.value, colorEl.value);
       users.push(userCreate);
